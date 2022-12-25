@@ -113,13 +113,11 @@ img {
   column-gap: 40px;
 }
 
-.item {
+.site-nav .link,
+.contact-link {
+  display: block;
   padding-top: 24px;
   padding-bottom: 24px;
-}
-
-.site-nav .link,
-.contact-nav .link {
   transition: color var(--anim-fast);
 }
 
@@ -137,8 +135,8 @@ img {
   text-decoration: none;
 }
 
-.contact-nav .link:hover,
-.contact-nav .link:focus {
+.contact-link:hover,
+.contact-link:focus {
   color: var(--accent-color);
 }
 
@@ -475,14 +473,12 @@ img {
   color: var(--light-accent-color);
   background-color: var(--accent-color);
 
-  opacity: 0;
   transform: translateY(100%);
   transition: transform var(--anim-fast);
 }
 
 .examples-item > .link:hover .examples-overlay,
 .examples-item > .link:focus .examples-overlay {
-  opacity: 1;
   transform: translateY(0);
 }
 
@@ -516,6 +512,7 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  visibility: visible;
   opacity: 1;
   scale: 1;
 
@@ -527,7 +524,8 @@ img {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 
-  transition: opacity var(--anim-fast), scale var(--anim-fast);
+  transition: visibility var(--anim-fast), opacity var(--anim-fast),
+    scale var(--anim-fast);
 }
 
 .backdrop.is-hidden .modal {
